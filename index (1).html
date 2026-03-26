@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneha Ashok Rao — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1b2d;
+    --navy2: #162236;
+    --teal: #0ea5a0;
+    --teal-light: #14ccc6;
+    --gold: #f0a500;
+    --white: #f8f9fb;
+    --gray: #8a99b0;
+    --card: #1a2d44;
+    --border: rgba(14,165,160,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 18px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(15,27,45,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; color: var(--teal);
+    letter-spacing: 0.5px;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: var(--gray); text-decoration: none;
+    font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.8px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(14,165,160,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(240,165,0,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { max-width: 700px; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(14,165,160,0.12);
+    border: 1px solid var(--border);
+    color: var(--teal); font-size: 0.8rem;
+    padding: 6px 16px; border-radius: 20px;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 span { color: var(--teal); font-style: italic; }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--gray);
+    line-height: 1.7; max-width: 560px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--teal); color: var(--navy);
+    padding: 14px 32px; border-radius: 6px;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1px solid var(--border); color: var(--white);
+    padding: 14px 32px; border-radius: 6px;
+    font-weight: 500; font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem; color: var(--teal);
+  }
+  .stat-label { font-size: 0.8rem; color: var(--gray); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.8px; }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 60px; }
+  .section-label {
+    font-size: 0.75rem; color: var(--teal);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+  .section-title span { color: var(--teal); font-style: italic; }
+  .section-sub { color: var(--gray); font-size: 1rem; max-width: 560px; line-height: 1.7; margin-bottom: 60px; }
+
+  /* ── ABOUT ── */
+  .about { background: var(--navy2); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .about-text p { color: var(--gray); line-height: 1.8; margin-bottom: 16px; font-size: 0.97rem; }
+  .about-text p strong { color: var(--white); }
+  .about-details { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .about-detail {
+    display: flex; align-items: center; gap: 12px;
+    color: var(--gray); font-size: 0.9rem;
+  }
+  .about-detail-icon { color: var(--teal); font-size: 1rem; width: 20px; }
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .edu-card:hover { border-color: var(--teal); }
+  .edu-degree { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+  .edu-school { color: var(--teal); font-size: 0.88rem; margin-bottom: 4px; }
+  .edu-date { color: var(--gray); font-size: 0.82rem; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 28px;
+    transition: all 0.2s;
+  }
+  .skill-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+  .skill-icon { font-size: 1.8rem; margin-bottom: 14px; }
+  .skill-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 12px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    background: rgba(14,165,160,0.1);
+    border: 1px solid rgba(14,165,160,0.2);
+    color: var(--teal); font-size: 0.75rem;
+    padding: 4px 10px; border-radius: 4px;
+  }
+
+  /* ── PROJECTS ── */
+  .projects { background: var(--navy2); }
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px;
+  }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px;
+    transition: all 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .project-card:hover { border-color: var(--teal); transform: translateY(-6px); }
+  .project-card:hover::before { opacity: 1; }
+  .project-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .badge {
+    font-size: 0.72rem; padding: 4px 10px; border-radius: 4px;
+    font-weight: 500; letter-spacing: 0.3px;
+  }
+  .badge-ml { background: rgba(240,165,0,0.12); color: var(--gold); border: 1px solid rgba(240,165,0,0.2); }
+  .badge-analytics { background: rgba(14,165,160,0.12); color: var(--teal); border: 1px solid var(--border); }
+  .badge-viz { background: rgba(120,80,220,0.12); color: #a78bfa; border: 1px solid rgba(120,80,220,0.2); }
+  .badge-finance { background: rgba(34,197,94,0.12); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; margin-bottom: 10px;
+  }
+  .project-desc { color: var(--gray); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+  .project-insights { margin-bottom: 24px; }
+  .project-insight {
+    display: flex; align-items: flex-start; gap: 8px;
+    color: var(--gray); font-size: 0.85rem;
+    margin-bottom: 6px; line-height: 1.5;
+  }
+  .project-insight::before { content: '→'; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+  .project-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .tool-tag {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--gray); font-size: 0.75rem;
+    padding: 4px 10px; border-radius: 4px;
+  }
+  .project-link {
+    color: var(--teal); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 10px; }
+
+  /* ── EXPERIENCE ── */
+  .exp-timeline { max-width: 760px; }
+  .exp-item {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 32px; margin-bottom: 48px;
+    position: relative;
+  }
+  .exp-item::after {
+    content: ''; position: absolute;
+    left: 159px; top: 8px; bottom: -40px;
+    width: 1px; background: var(--border);
+  }
+  .exp-item:last-child::after { display: none; }
+  .exp-date { color: var(--gray); font-size: 0.82rem; text-align: right; padding-top: 4px; }
+  .exp-dot {
+    position: absolute; left: 152px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid var(--navy);
+  }
+  .exp-title { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+  .exp-company { color: var(--teal); font-size: 0.88rem; margin-bottom: 12px; }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    color: var(--gray); font-size: 0.88rem;
+    line-height: 1.6; margin-bottom: 6px;
+    padding-left: 16px; position: relative;
+  }
+  .exp-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--teal); }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--navy2); text-align: center; }
+  .contact-cards {
+    display: flex; justify-content: center; gap: 24px;
+    flex-wrap: wrap; margin-top: 48px;
+  }
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 28px 40px;
+    text-decoration: none; color: var(--white);
+    transition: all 0.2s;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .contact-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+  .contact-card-icon { font-size: 1.6rem; }
+  .contact-card-label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+  .contact-card-value { font-size: 0.9rem; font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 60px; text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--gray); font-size: 0.82rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section, .hero { padding: 80px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-item::after { display: none; }
+    .exp-date { text-align: left; }
+    .exp-dot { display: none; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sneha Ashok Rao</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">Graduate Student · Open to Internships</div>
+    <h1>Sneha <span>Ashok</span> Rao</h1>
+    <p class="hero-sub">UCLA Master's student in Quantitative Economics — turning complex datasets into actionable insights through machine learning, statistical modeling, and data visualization.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Data Projects</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Degrees / Pursuing</div>
+      </div>
+      <div>
+        <div class="stat-num">80%+</div>
+        <div class="stat-label">ML Model Accuracy</div>
+      </div>
+      <div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Tools & Platforms</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">About Me</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-title">Graduate Student &<br><span>Aspiring</span> Data Scientist</div>
+      <p>I'm a Master's student in Quantitative Economics at UCLA with a background in Financial Economics and a B.S. in Economics, Mathematics & Statistics.</p>
+      <p>My work sits at the intersection of <strong>machine learning, marketing analytics, and financial modeling</strong> — I enjoy taking raw, messy datasets and turning them into clear stories that drive real business decisions.</p>
+      <p>I've built ML models for customer churn prediction, analyzed Bitcoin market regimes, predicted Green Bond ETF prices, and created interactive marketing dashboards — always with an eye on the business question behind the data.</p>
+      <div class="about-details">
+        <div class="about-detail"><span class="about-detail-icon">📍</span> Los Angeles, CA</div>
+        <div class="about-detail"><span class="about-detail-icon">🎓</span> UCLA — M.S. Quantitative Economics (Expected 2027)</div>
+        <div class="about-detail"><span class="about-detail-icon">💼</span> Open to Data Analyst / Data Science / Quant Finance Internships</div>
+      </div>
+    </div>
+    <div class="about-edu">
+      <div class="edu-card">
+        <div class="edu-degree">M.S. Quantitative Economics</div>
+        <div class="edu-school">University of California, Los Angeles (UCLA)</div>
+        <div class="edu-date">Expected June 2027 · Machine Learning, SQL, Applied Econometrics</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">M.S. Financial Economics</div>
+        <div class="edu-school">Madras School of Economics</div>
+        <div class="edu-date">June 2025 · Corporate Finance, Financial Modelling & Valuation</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">B.S. Economics, Mathematics & Statistics</div>
+        <div class="edu-school">Mount Carmel College, Bengaluru</div>
+        <div class="edu-date">June 2023 · Data Analysis Using R, Statistical Inference</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Technical Skills</div>
+  <div class="section-title">Tools & <span>Technologies</span></div>
+  <p class="section-sub">A toolkit built across academic projects, internships, and self-directed learning.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-title">Programming & Data</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">PySpark</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-title">Machine Learning</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">XGBoost</span>
+        <span class="skill-tag">K-Means</span>
+        <span class="skill-tag">Logistic Regression</span>
+        <span class="skill-tag">Feature Engineering</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-title">Visualization & BI</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Looker Studio</span>
+        <span class="skill-tag">Matplotlib</span>
+        <span class="skill-tag">Seaborn</span>
+        <span class="skill-tag">Power BI</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📈</div>
+      <div class="skill-title">Analytics Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Google Analytics 4</span>
+        <span class="skill-tag">Adobe Analytics</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">ETL Pipelines</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🧠</div>
+      <div class="skill-title">AI & Emerging Tech</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LLMs</span>
+        <span class="skill-tag">AI Agents</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Prompt Engineering</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💹</div>
+      <div class="skill-title">Domain Knowledge</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Marketing Analytics</span>
+        <span class="skill-tag">E-commerce</span>
+        <span class="skill-tag">Financial Modelling</span>
+        <span class="skill-tag">Econometrics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Featured <span>Projects</span></div>
+  <p class="section-sub">End-to-end data projects spanning machine learning, marketing analytics, and financial modeling.</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-ml">Machine Learning</span>
+        <span class="badge badge-analytics">Data Science</span>
+      </div>
+      <div class="project-title">Customer Churn Prediction</div>
+      <div class="project-desc">Built a full ML pipeline to predict which telecom customers are at risk of churning — enabling proactive retention strategies.</div>
+      <div class="project-insights">
+        <div class="project-insight">80.7% testing accuracy with AUC score of 0.843</div>
+        <div class="project-insight">Logistic Regression outperformed XGBoost on binary features</div>
+        <div class="project-insight">Tenure months identified as #1 churn predictor</div>
+        <div class="project-insight">Poor service attitude = top churn reason from EDA</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Scikit-learn</span>
+        <span class="tool-tag">XGBoost</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">Seaborn</span>
+      </div>
+      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-analytics">Marketing Analytics</span>
+        <span class="badge badge-viz">Dashboard</span>
+      </div>
+      <div class="project-title">Marketing Performance Dashboard</div>
+      <div class="project-desc">Built an interactive 5-component marketing dashboard analyzing 144K+ sessions from the Google Merchandise Store e-commerce dataset.</div>
+      <div class="project-insights">
+        <div class="project-insight">Scatter plot revealed non-linear sessions vs conversion rate relationship</div>
+        <div class="project-insight">Direct & Organic Search drove highest traffic volume</div>
+        <div class="project-insight">Friday identified as peak traffic day for campaign scheduling</div>
+        <div class="project-insight">US dominant market; geo map revealed international spread</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">Google Analytics 4</span>
+        <span class="tool-tag">Looker Studio</span>
+        <span class="tool-tag">E-commerce Data</span>
+      </div>
+      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-ml">Machine Learning</span>
+        <span class="badge badge-finance">Finance</span>
+      </div>
+      <div class="project-title">Bitcoin Market Regime Analysis</div>
+      <div class="project-desc">Identified bullish, bearish, and neutral Bitcoin market regimes using both unsupervised clustering and supervised classification approaches.</div>
+      <div class="project-insights">
+        <div class="project-insight">Compared K-Means clustering vs XGBoost classification</div>
+        <div class="project-insight">Evaluated with statistical metrics and performance benchmarks</div>
+        <div class="project-insight">Derived actionable insights on market volatility patterns</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">K-Means</span>
+        <span class="tool-tag">XGBoost</span>
+        <span class="tool-tag">Pandas</span>
+      </div>
+      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-ml">Machine Learning</span>
+        <span class="badge badge-finance">Finance</span>
+      </div>
+      <div class="project-title">Green Bond ETF Price Prediction</div>
+      <div class="project-desc">Built and optimized ML models to predict Green Bond ETF prices using multi-source datasets with feature engineering pipelines.</div>
+      <div class="project-insights">
+        <div class="project-insight">Multi-source dataset integration and feature engineering</div>
+        <div class="project-insight">Model validation pipelines ensuring predictive accuracy</div>
+        <div class="project-insight">ETL workflows for data collection and transformation</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Scikit-learn</span>
+        <span class="tool-tag">Feature Engineering</span>
+        <span class="tool-tag">ETL</span>
+      </div>
+      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-viz">Interactive App</span>
+        <span class="badge badge-finance">Finance</span>
+      </div>
+      <div class="project-title">Options Payoff Web Application</div>
+      <div class="project-desc">Developed an interactive Python analytics application to model options strategy outcomes and visualize payoff diagrams dynamically.</div>
+      <div class="project-insights">
+        <div class="project-insight">Interactive simulation of multiple options strategies</div>
+        <div class="project-insight">User-focused data visualization for non-technical users</div>
+        <div class="project-insight">Applied financial modeling and scenario analysis</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Matplotlib</span>
+        <span class="tool-tag">Interactive Viz</span>
+        <span class="tool-tag">Financial Modeling</span>
+      </div>
+      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <div class="section-title">Work <span>History</span></div>
+  <p class="section-sub">Professional experience in financial operations and policy research gained while pursuing my degrees.</p>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">May 2022 –<br>July 2022</div>
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-title">Operations Intern</div>
+        <div class="exp-company">Morgan Stanley · Bengaluru, India</div>
+        <ul class="exp-bullets">
+          <li>Collaborated with MiFID (RTB) team under the Trade & Transaction Reporting Office to ensure regulatory reporting accuracy across large transaction datasets</li>
+          <li>Created presentations synthesizing complex compliance data into clear formats for non-technical stakeholders</li>
+          <li>Coordinated with cross-functional teams to maintain data consistency and meet reporting obligations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">Aug 2021 –<br>Apr 2022</div>
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-title">Research Assistant</div>
+        <div class="exp-company">CoronaNet Research Project · Remote</div>
+        <ul class="exp-bullets">
+          <li>Tracked and analyzed COVID-19 government policy data for Tamil Nadu, managing large-scale datasets for quality and consistency</li>
+          <li>Identified and extracted structured information from government sources focusing on rural policy impact</li>
+          <li>Contributed to a globally recognized policy database used by researchers worldwide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <div class="section-title">Let's <span>Connect</span></div>
+  <p class="section-sub" style="margin: 0 auto 0;">Currently a graduate student at UCLA actively building my skills in Data Science, Analytics, and Quantitative Finance. Open to internship opportunities and always happy to connect!</p>
+  <div class="contact-cards">
+    <a href="mailto:sneharao26@g.ucla.edu" class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <div class="contact-card-label">Email</div>
+      <div class="contact-card-value">sneharao26@g.ucla.edu</div>
+    </a>
+    <a href="https://github.com/sneha123-rao" target="_blank" class="contact-card">
+      <div class="contact-card-icon">💻</div>
+      <div class="contact-card-label">GitHub</div>
+      <div class="contact-card-value">github.com/sneha123-rao</div>
+    </a>
+    <a href="https://www.linkedin.com/in/sneha-rao-791535211" target="_blank" class="contact-card">
+      <div class="contact-card-icon">🔗</div>
+      <div class="contact-card-label">LinkedIn</div>
+      <div class="contact-card-value">linkedin.com/in/sneha-rao-791535211</div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Sneha Ashok Rao · Built with HTML & CSS · Hosted on GitHub Pages</p>
+</footer>
+
+</body>
+</html>
