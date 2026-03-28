@@ -350,7 +350,7 @@
     </div>
     <div class="hero-stats">
       <div>
-        <div class="stat-num">4+</div>
+        <div class="stat-num">4</div>
         <div class="stat-label">Data Projects</div>
       </div>
       <div>
@@ -481,52 +481,8 @@
 <section class="projects" id="projects">
   <div class="section-label">Portfolio</div>
   <div class="section-title">Featured <span>Projects</span></div>
-  <p class="section-sub">End-to-end data projects spanning machine learning, marketing analytics, and financial modeling.</p>
+  <p class="section-sub">End-to-end data science and econometrics projects spanning machine learning, causal inference, and marketing analytics.</p>
   <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="project-badges">
-        <span class="badge badge-ml">Machine Learning</span>
-        <span class="badge badge-analytics">Data Science</span>
-      </div>
-      <div class="project-title">Customer Churn Prediction</div>
-      <div class="project-desc">Built a full ML pipeline to predict which telecom customers are at risk of churning — enabling proactive retention strategies.</div>
-      <div class="project-insights">
-        <div class="project-insight">80.7% testing accuracy with AUC score of 0.843</div>
-        <div class="project-insight">Logistic Regression outperformed XGBoost on binary features</div>
-        <div class="project-insight">Tenure months identified as #1 churn predictor</div>
-        <div class="project-insight">Poor service attitude = top churn reason from EDA</div>
-      </div>
-      <div class="project-tools">
-        <span class="tool-tag">Python</span>
-        <span class="tool-tag">Scikit-learn</span>
-        <span class="tool-tag">XGBoost</span>
-        <span class="tool-tag">Pandas</span>
-        <span class="tool-tag">Seaborn</span>
-      </div>
-      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-badges">
-        <span class="badge badge-analytics">Marketing Analytics</span>
-        <span class="badge badge-viz">Dashboard</span>
-      </div>
-      <div class="project-title">Marketing Performance Dashboard</div>
-      <div class="project-desc">Built an interactive 5-component marketing dashboard analyzing 144K+ sessions from the Google Merchandise Store e-commerce dataset.</div>
-      <div class="project-insights">
-        <div class="project-insight">Scatter plot revealed non-linear sessions vs conversion rate relationship</div>
-        <div class="project-insight">Direct & Organic Search drove highest traffic volume</div>
-        <div class="project-insight">Friday identified as peak traffic day for campaign scheduling</div>
-        <div class="project-insight">US dominant market; geo map revealed international spread</div>
-      </div>
-      <div class="project-tools">
-        <span class="tool-tag">Google Analytics 4</span>
-        <span class="tool-tag">Looker Studio</span>
-        <span class="tool-tag">E-commerce Data</span>
-      </div>
-      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
 
     <div class="project-card">
       <div class="project-badges">
@@ -534,61 +490,91 @@
         <span class="badge badge-finance">Finance</span>
       </div>
       <div class="project-title">Bitcoin Market Regime Analysis</div>
-      <div class="project-desc">Identified bullish, bearish, and neutral Bitcoin market regimes using both unsupervised clustering and supervised classification approaches.</div>
+      <div class="project-desc">Graduate-level ML research identifying four Bitcoin market regimes (Bottoming, Reversal, Appreciation, Acceleration) using K-Means clustering and PCA on 3,286 daily observations spanning 2018–2026.</div>
       <div class="project-insights">
-        <div class="project-insight">Compared K-Means clustering vs XGBoost classification</div>
-        <div class="project-insight">Evaluated with statistical metrics and performance benchmarks</div>
-        <div class="project-insight">Derived actionable insights on market volatility patterns</div>
+        <div class="project-insight">PCA reduced 11 features to 5 components explaining 80% of variance</div>
+        <div class="project-insight">XGBoost achieved 87.27% accuracy vs Random Forest at 82.14%</div>
+        <div class="project-insight">Two-approach framework addressing label circularity using forward Sharpe ratio</div>
+        <div class="project-insight">Bitcoin-SPX correlation near zero during Acceleration — decouples from equity markets in bull phases</div>
       </div>
       <div class="project-tools">
         <span class="tool-tag">Python</span>
         <span class="tool-tag">K-Means</span>
+        <span class="tool-tag">PCA</span>
         <span class="tool-tag">XGBoost</span>
-        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">Random Forest</span>
+        <span class="tool-tag">yfinance</span>
       </div>
-      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+      <a href="https://github.com/sneha123-rao/bitcoin-market-regime-analysis" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-analytics">Marketing Analytics</span>
+        <span class="badge badge-ml">Econometrics</span>
+      </div>
+      <div class="project-title">Marketing Mix Model</div>
+      <div class="project-desc">Built a multivariate OLS regression model quantifying the incremental ROI of TV, Radio, and Newspaper advertising on sales — the core analytical method used by marketing analytics consultancies for Fortune 500 clients.</div>
+      <div class="project-insights">
+        <div class="project-insight">R² = 0.897 — three channels explain 89.7% of all sales variation</div>
+        <div class="project-insight">Radio delivers 4x higher ROI than TV ($0.189 vs $0.045 per $1,000 spend)</div>
+        <div class="project-insight">Newspaper not statistically significant — budget reallocation opportunity identified</div>
+        <div class="project-insight">ARIMA(0,0,0) confirmed cross-sectional structure — regression model more appropriate than time series</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">R</span>
+        <span class="tool-tag">OLS Regression</span>
+        <span class="tool-tag">ARIMA</span>
+        <span class="tool-tag">ggplot2</span>
+        <span class="tool-tag">corrplot</span>
+      </div>
+      <a href="https://github.com/sneha123-rao/marketing-mix-model" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-badges">
+        <span class="badge badge-analytics">Causal Inference</span>
+        <span class="badge badge-analytics">Marketing Analytics</span>
+      </div>
+      <div class="project-title">Causal Impact Analysis — Super Bowl Campaign</div>
+      <div class="project-desc">Applied Google's CausalImpact (Bayesian Structural Time Series) to measure whether a Super Bowl ad campaign caused a statistically significant sales lift — controlling for market-wide trends using competitor sales.</div>
+      <div class="project-insights">
+        <div class="project-insight">9.7% statistically significant sales lift — p-value = 0.001</div>
+        <div class="project-insight">+101 incremental units/day over 329-day post-campaign period</div>
+        <div class="project-insight">~33,229 total incremental units = ~$3.3M revenue at $100/unit</div>
+        <div class="project-insight">Competitor sales used as control to isolate true causal effect from market trends</div>
+      </div>
+      <div class="project-tools">
+        <span class="tool-tag">R</span>
+        <span class="tool-tag">CausalImpact</span>
+        <span class="tool-tag">Bayesian BSTS</span>
+        <span class="tool-tag">zoo</span>
+        <span class="tool-tag">ggplot2</span>
+      </div>
+      <a href="https://github.com/sneha123-rao/causal-impact-marketing" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
     <div class="project-card">
       <div class="project-badges">
         <span class="badge badge-ml">Machine Learning</span>
-        <span class="badge badge-finance">Finance</span>
+        <span class="badge badge-analytics">Data Science</span>
       </div>
-      <div class="project-title">Green Bond ETF Price Prediction</div>
-      <div class="project-desc">Built and optimized ML models to predict Green Bond ETF prices using multi-source datasets with feature engineering pipelines.</div>
+      <div class="project-title">Customer Churn Prediction</div>
+      <div class="project-desc">Built a full end-to-end ML pipeline to predict which telecom customers are at risk of churning — enabling proactive retention strategies and quantifying business impact.</div>
       <div class="project-insights">
-        <div class="project-insight">Multi-source dataset integration and feature engineering</div>
-        <div class="project-insight">Model validation pipelines ensuring predictive accuracy</div>
-        <div class="project-insight">ETL workflows for data collection and transformation</div>
+        <div class="project-insight">80.7% testing accuracy with AUC score of 0.843</div>
+        <div class="project-insight">Logistic Regression outperformed XGBoost — simpler model more appropriate for binary features</div>
+        <div class="project-insight">Tenure months identified as #1 churn predictor via feature importance</div>
+        <div class="project-insight">148 missed churners = $11,840/month lost revenue — business case for model deployment</div>
       </div>
       <div class="project-tools">
         <span class="tool-tag">Python</span>
         <span class="tool-tag">Scikit-learn</span>
-        <span class="tool-tag">Feature Engineering</span>
-        <span class="tool-tag">ETL</span>
+        <span class="tool-tag">Logistic Regression</span>
+        <span class="tool-tag">XGBoost</span>
+        <span class="tool-tag">Seaborn</span>
       </div>
-      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-badges">
-        <span class="badge badge-viz">Interactive App</span>
-        <span class="badge badge-finance">Finance</span>
-      </div>
-      <div class="project-title">Options Payoff Web Application</div>
-      <div class="project-desc">Developed an interactive Python analytics application to model options strategy outcomes and visualize payoff diagrams dynamically.</div>
-      <div class="project-insights">
-        <div class="project-insight">Interactive simulation of multiple options strategies</div>
-        <div class="project-insight">User-focused data visualization for non-technical users</div>
-        <div class="project-insight">Applied financial modeling and scenario analysis</div>
-      </div>
-      <div class="project-tools">
-        <span class="tool-tag">Python</span>
-        <span class="tool-tag">Matplotlib</span>
-        <span class="tool-tag">Interactive Viz</span>
-        <span class="tool-tag">Financial Modeling</span>
-      </div>
-      <a href="https://github.com/sneha123-rao" target="_blank" class="project-link">View on GitHub →</a>
+      <a href="https://github.com/sneha123-rao/customer-churn-prediction" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
   </div>
@@ -635,10 +621,10 @@
   <div class="section-title">Let's <span>Connect</span></div>
   <p class="section-sub" style="margin: 0 auto 0;">Currently a graduate student at UCLA actively building my skills in Data Science, Analytics, and Quantitative Finance. Open to internship opportunities and always happy to connect!</p>
   <div class="contact-cards">
-    <a href="mailto:sneharao26@g.ucla.edu" class="contact-card">
+    <a href="/cdn-cgi/l/email-protection#94e7faf1fcf5e6f5fba6a2d4f3bae1f7f8f5baf1f0e1" class="contact-card">
       <div class="contact-card-icon">✉️</div>
       <div class="contact-card-label">Email</div>
-      <div class="contact-card-value">sneharao26@g.ucla.edu</div>
+      <div class="contact-card-value"><span class="__cf_email__" data-cfemail="50233e35383122313f626610377e25333c317e353425">[email&#160;protected]</span></div>
     </a>
     <a href="https://github.com/sneha123-rao" target="_blank" class="contact-card">
       <div class="contact-card-icon">💻</div>
@@ -651,12 +637,4 @@
       <div class="contact-card-value">linkedin.com/in/sneha-rao-791535211</div>
     </a>
   </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Sneha Ashok Rao · Built with HTML & CSS · Hosted on GitHub Pages</p>
-</footer>
-
-</body>
-</html>
+</section
